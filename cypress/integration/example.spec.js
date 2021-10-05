@@ -1,5 +1,5 @@
 
-describe('Example Test', ()=>{
+/*describe('Example Test', ()=>{
     before(()=>{
         cy.visit('/');
     });
@@ -9,4 +9,4 @@ describe('Example Test', ()=>{
             cy.get('.main-logo').should('be.visible');
         });
     });
-});
+});*/
