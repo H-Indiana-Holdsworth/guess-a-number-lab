@@ -1,9 +1,12 @@
 // import functions and grab DOM elements
 const userGuess = document.getElementById('user-guess');
 const result = document.getElementById('result');
+const resetButton = document.getElementById('reset-button');
+
 let guessesLeft = document.getElementById('guesses-left');
 
 let button = document.getElementById('button');
+
 
 // initialize global state
 let remainingTries = 4;
@@ -25,7 +28,7 @@ button.addEventListener('click', ()=>{
   }
 
   else if (remainingTries === 0) {
-    result.textContent = "Mission failed, you'll get 'em next time"
+    result.textContent = `Mission failed, you'll get 'em next time. The correct answer was ${randomNum}.`
     button = document.getElementById('button').disabled = true;
     
   } 
@@ -41,6 +44,14 @@ button.addEventListener('click', ()=>{
 
   console.log(randomNum);
 
+
+});
+
+resetButton.addEventListener('click', () => {
+  remainingTries = 4;
+  guessesLeft.textContent = remainingTries;
+  randomNum = Math.floor(Math.random()*20)+1;
+  button = document.getElementById('button').disabled = false;
 
 });
   // get user input
