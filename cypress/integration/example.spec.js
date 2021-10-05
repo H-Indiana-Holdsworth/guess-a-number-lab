@@ -1,12 +1,12 @@
 
-/*describe('Example Test', ()=>{
+describe('Example Test', ()=>{
     before(()=>{
         cy.visit('/');
     });
 
     describe('HTML elements', ()=>{   
-        it('contains the alchemy logo', ()=>{
-            cy.get('.main-logo').should('be.visible');
+        it('contains reset button', ()=>{
+            cy.get('#reset-button').should('be.visible');
         });
     });
-});*/
+});
