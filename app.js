@@ -50,6 +50,7 @@ button.addEventListener('click', ()=>{
 resetButton.addEventListener('click', () => {
   remainingTries = 4;
   guessesLeft.textContent = remainingTries;
+  userGuess.value = '';
   randomNum = Math.floor(Math.random()*20)+1;
   button = document.getElementById('button').disabled = false;
 
