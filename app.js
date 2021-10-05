@@ -10,49 +10,46 @@ let button = document.getElementById('button');
 
 // initialize global state
 let remainingTries = 4;
-let randomNum = Math.floor(Math.random()*20)+1;
+let randomNum = Math.floor(Math.random() * 20) + 1;
 
 
 // set event listeners 
 button.addEventListener('click', ()=>{
-  remainingTries--;
+    remainingTries--;
 
-  guessesLeft.textContent = remainingTries;
+    guessesLeft.textContent = remainingTries;
 
-  const userGuessValue = Number(userGuess.value);
+    const userGuessValue = Number(userGuess.value);
 
-  if (userGuessValue === randomNum) {
-    result.textContent = 'You got it!'
-    button = document.getElementById('button').disabled = true;
+    if (userGuessValue === randomNum) {
+        result.textContent = 'You got it!';
+        button = document.getElementById('button').disabled = true;
 
-  }
+    }
 
-  else if (remainingTries === 0) {
-    result.textContent = `Mission failed, you'll get 'em next time. The correct answer was ${randomNum}.`
-    button = document.getElementById('button').disabled = true;
+    else if (remainingTries === 0) {
+        result.textContent = `Mission failed, you'll get 'em next time. The correct answer was ${randomNum}.`;
+        button = document.getElementById('button').disabled = true;
     
-  } 
+    } 
   
-  else if (userGuessValue > randomNum) {
-    result.textContent = 'Guess lower!'
-  }
+    else if (userGuessValue > randomNum) {
+        result.textContent = 'Guess lower!';
+    }
 
-  else if (userGuessValue < randomNum) {
-    result.textContent = 'Guess higher!'
-  }
-
-
-  console.log(randomNum);
+    else if (userGuessValue < randomNum) {
+        result.textContent = 'Guess higher!';
+    }
 
 
 });
 
 resetButton.addEventListener('click', () => {
-  remainingTries = 4;
-  guessesLeft.textContent = remainingTries;
-  userGuess.value = '';
-  randomNum = Math.floor(Math.random()*20)+1;
-  button = document.getElementById('button').disabled = false;
+    remainingTries = 4;
+    guessesLeft.textContent = remainingTries;
+    userGuess.value = '';
+    randomNum = Math.floor(Math.random() * 20) + 1;
+    button = document.getElementById('button').disabled = false;
 
 });
   // get user input
