@@ -22,18 +22,21 @@ button.addEventListener('click', ()=>{
 
     if (userGuessValue === randomNum) {
         result.textContent = 'You got it!';
-        button = document.getElementById('button').disabled = true;}
+        button = document.getElementById('button').disabled = true;
+    }
 
     else if (remainingTries === 0) {
         result.textContent = `Mission failed, you'll get 'em next time. The correct answer was ${randomNum}.`;
-        button = document.getElementById('button').disabled = true;} 
+        button = document.getElementById('button').disabled = true;
+    } 
   
     else if (userGuessValue > randomNum) {
-        result.textContent = 'Guess lower!';}
+        result.textContent = 'Guess lower!';
+    }
 
     else if (userGuessValue < randomNum) {
-        result.textContent = 'Guess higher!';}
-
+        result.textContent = 'Guess higher!';
+    }
 });
 
 resetButton.addEventListener('click', () => {
@@ -42,5 +45,4 @@ resetButton.addEventListener('click', () => {
     userGuess.value = '';
     randomNum = Math.floor(Math.random() * 20) + 1;
     button = document.getElementById('button').disabled = false;
-
 });
