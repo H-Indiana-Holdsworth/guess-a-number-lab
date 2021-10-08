@@ -4,6 +4,7 @@ const result = document.getElementById('result');
 const resetButton = document.getElementById('reset-button');
 const correctGuesses = document.getElementById('correct-guesses');
 const incorrectGuesses = document.getElementById('incorrect-guesses');
+const errorMessage = document.getElementById('error-message');
 
 let guessesLeft = document.getElementById('guesses-left');
 
@@ -17,11 +18,16 @@ let numIncorrectGuesses = 0;
 
 // set event listeners 
 button.addEventListener('click', ()=>{
-    remainingTries--;
-
-    guessesLeft.textContent = remainingTries;
-
     const userGuessValue = Number(userGuess.value);
+
+    if (userGuessValue === Number) {
+        remainingTries = 4;
+        guessesLeft.textContent = remainingTries;
+        return errorMessage.textContent ='Must be a number!';
+    }
+
+    remainingTries--;
+    guessesLeft.textContent = remainingTries;
 
     if (userGuessValue === randomNum) {
         result.textContent = 'You got it!';
